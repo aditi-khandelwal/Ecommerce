@@ -1,0 +1,9 @@
+a{
+    margin: 5px;
+}
+.buttons{
+    display: flex;
+}
+.fill-space {
+    flex: 1 1 auto;
+}

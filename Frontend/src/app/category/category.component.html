@@ -1,0 +1,19 @@
+<div class="flex-container">
+<h2>Popular</h2>
+<mat-divider></mat-divider>
+<div class="cards">
+<mat-card class="example-card" *ngFor="let item of data" (click)="reDirect(item)" >
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{item.name}}</mat-card-title>
+    <mat-card-subtitle>{{item.category_id.name}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src= "{{ 'http://localhost:8081/'+item.imageName}}" alt="Photo of a Shiba Inu" >
+  <mat-card-actions>
+    <i class="material-icons">local_offer</i>
+    <i class="material-icons" style="float: right">star_half</i>
+    <i class="material-icons" style="float: right">share</i>
+  </mat-card-actions>
+</mat-card>
+</div>
+</div>

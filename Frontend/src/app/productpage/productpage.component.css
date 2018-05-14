@@ -1,0 +1,12 @@
+.grid{
+    margin-top: 30px;
+}
+.img{
+
+    object-fit: cover;
+}
+mat-card{
+    width: 100%;
+    margin: 5px 0px;
+
+}

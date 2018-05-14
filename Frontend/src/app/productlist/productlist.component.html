@@ -1,0 +1,21 @@
+<div class="container">
+    <table class="mainTable">
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        <tr *ngFor="let product of products">
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td> 
+          <td>  <button mat-raised-button color="primary" (click)="updateData(product._id)">EDIT</button>
+          </td>
+          <td>  <button mat-raised-button color="warn" (click)="deleteData(product._id)">DELETE</button>
+          </td>
+        </tr>
+      </table>
+      
+      
+      <button mat-fab color="primary" class="bottomButton" (click)="addProductFormRedirection()">+</button>
+</div>

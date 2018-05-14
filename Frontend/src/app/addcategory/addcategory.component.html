@@ -1,0 +1,12 @@
+<h2>Add Category</h2>
+<form class="formwidth" (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <mat-form-field>
+         <input matInput placeholder="Name" id="name" name="name" [(ngModel)]="name">
+    </mat-form-field>
+
+    <mat-form-field>
+         <input matInput placeholder="Description" id="description" name="description" [(ngModel)]="description">
+    </mat-form-field>  
+    <button type="submit" mat-raised-button color="primary">Submit</button>
+ 
+</form>

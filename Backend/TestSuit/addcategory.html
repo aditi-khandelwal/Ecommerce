@@ -1,0 +1,29 @@
+<html>
+<head>
+    <style>
+        .container {
+            text-align : center;
+            margin : 20px auto;
+            padding : 10px;
+        }
+        
+        input, select {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="http://localhost:8081/addcategory" method="POST">
+            <input type="text" placeholder="Product Name" name="name" />
+            <input type="text" placeholder="Product Description" name="description" />
+            <input type="submit" value="Go"/>
+        </form>
+    </div>
+</body>
+</html>

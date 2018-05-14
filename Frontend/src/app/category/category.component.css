@@ -1,0 +1,27 @@
+.example-card {
+    max-width: 200px;
+    margin: 5px;
+    
+}
+.cards{
+    flex:3;
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.example-header-image {
+    background-image: url('http://via.placeholder.com/350x150');
+    background-size: cover;
+}
+
+h2{
+    order: 1;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+.flex-container{
+  display: flex;
+  flex-direction: column;
+}

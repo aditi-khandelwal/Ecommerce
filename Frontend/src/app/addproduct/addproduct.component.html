@@ -1,0 +1,29 @@
+<h2>Add Product</h2>
+<form class="formwidth" (ngSubmit)="onSubmit()" #myForm="ngForm" name="product">
+    <mat-form-field>
+         <input matInput placeholder="Name" id="name" [(ngModel)]="data.name" name="name">
+    </mat-form-field>
+
+    <mat-form-field>
+         <input matInput placeholder="Description" id="description" [(ngModel)]="data.description" name="description">
+    </mat-form-field>  
+
+    <mat-form-field>  
+         <input matInput placeholder="Price" id="price" [(ngModel)]="data.price" name="price" type="number">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select placeholder="{{data.category_id.name}}" [(ngModel)]="data.category_id"  name="category_id">
+          <mat-option *ngFor="let category of categories" [value]="category._id">
+            {{ category.name }}
+        </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field> 
+         <input matInput placeholder="Rating" id="rating" [(ngModel)]="data.rating" name="rating" type="number">
+    </mat-form-field>
+
+    <input type="file" id="fileName" (change)="fileChange($event)" #fileInput>
+    <button type="submit" mat-raised-button color="primary">Submit</button>
+ 
+</form>

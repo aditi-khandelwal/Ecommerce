@@ -1,0 +1,8 @@
+<mat-grid-list cols="4" rowHeight="100px" class="grid">
+  <mat-grid-tile rowspan = "3" colspan = "2"> 
+     <img src = "{{ 'http://localhost:8081/'+ data[0].imageName}}" alt="Photo of a Shiba Inu" >
+  </mat-grid-tile>
+  <mat-grid-tile rowspan = "1" colspan = "2" ><mat-card><h5>Name: - <br></h5>{{  data[0].name }}</mat-card></mat-grid-tile>
+  <mat-grid-tile rowspan = "1" colspan = "2" ><mat-card><h5>Description - <br></h5>{{  data[0].description }}</mat-card></mat-grid-tile>
+  <mat-grid-tile rowspan = "1" colspan = "2" ><mat-card><h5>Rating: - <br></h5>{{  data[0].rating }}</mat-card></mat-grid-tile>
+</mat-grid-list>

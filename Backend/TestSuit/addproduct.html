@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        .container {
+            text-align : center;
+            margin : 20px auto;
+            padding : 10px;
+        }
+        
+        input, select {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="http://localhost:8081/addproduct" enctype="multipart/form-data" method="POST">
+            <input type="text" placeholder="Product Name" name="name" />
+            <input type="text" placeholder="Product Description" name="description" />
+            <input type="number" placeholder="Product Price" name="price" />
+            <select name="category_id" id="categoryDropDown">
+            </select>
+            <input type="number" placeholder="Product Rating" name="rating"/>
+            <input type="file" name="imgUploader" multiple />
+            <input type="submit" value="GO"/>
+        </form>
+    </div>
+
+
+    <script>
+
+        const generateChoice = (parent,text,id) => {
+            let node = document.createElement('OPTION');
+            let textnode = document.createTextNode(`${text}`); 
+            node.appendChild(textnode);
+            parent.appendChild(node);
+            let attr = document.createAttribute('value');
+            attr.value = id;
+            node.setAttributeNode(attr);  
+        };
+
+        axios.get('http://localhost:8081/category').then((data)=> {
+            console.log(data);
+            const parent = document.getElementById('categoryDropDown');
+            for(let i=0;i< data.data.length;i++) {
+                console.log(data.data[i].name);
+                generateChoice(parent,data.data[i].name,data.data[i]['_id']);
+            }
+        }, (e) => {
+            console.log(e);
+        });
+    </script>
+</body>
+</html>
